@@ -37,7 +37,7 @@ Di un atleta ogni suo dato viene visualizzato in quatto modalità differenti:
 
 |   | Descrizione | Revisione |
 | --- | --- | --- |
-| $${\\color{black}Cognome}$$ | Dato non utilizzato |   |
+| $${Cognome}$$ | Dato non utilizzato |   |
 | $${\\color{red}Cognome}$$ | Dato non trovato nei tesseramenti | Sì |
 | $${\\color{orange}Cognome}$$ | Dato non corrisponde a quanto presente nei tesseramenti | Sì |
 | $${\\color{green}Cognome}$$ | Dato corrisponde con l’atleta individuato nei tesseramenti |   |
