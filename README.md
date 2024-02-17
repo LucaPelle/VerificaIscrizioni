@@ -2,44 +2,46 @@
 
 ## Selezione file
 
-Ãˆ necessario caricare tre file per l'esecuzione del programma:
+È necessario caricare tre file per l'esecuzione del programma:
 
-<table><tbody><tr><td>SocietÃ :</td><td>il file esportato dal portale dei tesseramenti solitamente denominato SOCIETA.DBF</td></tr><tr><td>Atleti:</td><td>il file esportato dal portale dei tesseramenti solitamente denominato ATLETI.DBF</td></tr><tr><td>Iscrizioni:</td><td>un file Microsoft Excel che presenta nelle colonne i parametri di comparazione, nella prima riga l'intestazione di tali parametri e nelle righe seguenti i dati degli atleti</td></tr></tbody></table>
+<table><tbody><tr><td>Società:</td><td>il file esportato dal portale dei tesseramenti solitamente denominato SOCIETA.DBF</td></tr><tr><td>Atleti:</td><td>il file esportato dal portale dei tesseramenti solitamente denominato ATLETI.DBF</td></tr><tr><td>Iscrizioni:</td><td>un file Microsoft Excel che presenta nelle colonne i parametri di comparazione, nella prima riga l'intestazione di tali parametri e nelle righe seguenti i dati degli atleti</td></tr></tbody></table>
 
+Selezionato un file nella medesima cartella vengono ricercati e selezionati anche gli altri due, è possibile modificare la selezione indicando il file specifico.
 Dopo aver selezionato i file premere il pulsante "Apri".
 
 ## Selezione parametri di comparazione
 
-Nelle caselle combinate Ã¨ necessario inserire l'intestazione della colonna del file iscrizioni che rappresenta i parametri indicati. Ãˆ obbligatorio selezionare un parametro tessera, le altre selezioni sono facoltative tramite l'opzione "Non utilizzare". Ãˆ consigliato selezionare il numero piÃ¹ alto possibile di parametri per aumentare l'affidabilitÃ  della comparazione.  
+Nelle caselle combinate è necessario inserire l'intestazione della colonna del file iscrizioni che rappresenta i parametri indicati. È obbligatorio selezionare un parametro tessera, le altre selezioni sono facoltative tramite l'opzione "Non utilizzare". È consigliato selezionare il numero più alto possibile di parametri per aumentare l'affidabilità della comparazione.  
+Il programma effettua una ricerca automatica delle intestazioni e propone la selezione della colonna.
 Una volta terminata la selezione premere il pulsante "Esporta".
 
 ## Esportazione
 
-Ãˆ possibile selezionare il nome ed il percorso dove salvare il file da esportare. Ãˆ possibile sovrascrivere file giÃ  presenti se selezionati, non Ã¨ consentita l'esportazione se il file corrispondente Ã¨ in uso ad un altro programma.  
+È possibile selezionare il nome ed il percorso dove salvare il file da esportare. È possibile sovrascrivere file già presenti se selezionati, non è consentita l'esportazione se il file corrispondente è in uso ad un altro programma.  
 Al termine compare una finestra che riporta l'avvenuta elaborazione e il numero di atleti esaminati.
 
 ## Guida alla lettura del report
 
 Il programma restituisce il report come un file Microsoft Excel contenente tutti i campi presenti nel file iscrizioni segnalando la corrispondenza dei dati sulla base dei parametri di comparazione selezionati.  
-L'algoritmo di comparazione valuta innanzitutto la corrispondenza della tessera federale, se non sono presenti riscontri nei tesseramenti effettua una ricerca sulla presenza di atleti col medesimo cognome e nome prendendo in considerazione il riscontro piÃ¹ affidabile.  
-Nella prima colonna Ã¨ riportata l'affidabilitÃ  del risultato evidenziata anche dal colore della prima cella di ogni riga.
+L'algoritmo di comparazione valuta innanzitutto la corrispondenza della tessera federale, se non sono presenti riscontri nei tesseramenti effettua una ricerca sulla presenza di atleti col medesimo cognome e nome prendendo in considerazione il riscontro più affidabile.  
+Nella prima colonna è riportata l'affidabilità del risultato evidenziata anche dal colore della prima cella di ogni riga.
 
-| Â  | AffidabilitÃ  | Descrizione | Revisione |
+|   | Affidabilità | Descrizione | Revisione |
 | --- | --- | --- | --- |
-| $\\color{rgb(248,105,107)}{\\textsf{390}}$ | 0 â€“ 400 | Non Ã¨ stato trovato un riscontro nei tesseramenti | SÃ¬ |
-| $\\color{rgb(251,170,120)}{\\textsf{490}}$ | 401 - 500 | Il riscontro non Ã¨ affidabile, i parametri corrispondenti non sono sufficienti allâ€™identificazione dellâ€™atleta | SÃ¬ |
-| $\\color{rgb(255,235,132)}{\\textsf{590}}$ | 501 - 600 | Il riscontro Ã¨ attendibile ma il nome dellâ€™atleta con corrisponde al numero di tessera o viceversa | SÃ¬ |
-| $\\color{rgb(177,212,77)}{\\textsf{690}}$ | 601 - 700 | Il riscontro Ã¨ affidabile, alcuni parametri non corrispondono ma Ã¨ possibile identificare lâ€™atleta | Suggerita |
-| $\\color{rgb(99,190,23)}{\\textsf{800}}$ | \> 700 | Il riscontro Ã¨ certo, i parametri principali corrispondono, sono possibili non corrispondenze su un numero limitato di parametri non identificativi | Â  |
+| $\\color{rgb(248,105,107)}{\\textsf{390}}$ | 0 – 400 | Non è stato trovato un riscontro nei tesseramenti | Sì |
+| $\\color{rgb(251,170,120)}{\\textsf{490}}$ | 401 - 500 | Il riscontro non è affidabile, i parametri corrispondenti non sono sufficienti all’identificazione dell’atleta | Sì |
+| $\\color{rgb(255,235,132)}{\\textsf{590}}$ | 501 - 600 | Il riscontro è attendibile ma il nome dell’atleta con corrisponde al numero di tessera o viceversa | Sì |
+| $\\color{rgb(177,212,77)}{\\textsf{690}}$ | 601 - 700 | Il riscontro è affidabile, alcuni parametri non corrispondono ma è possibile identificare l’atleta | Suggerita |
+| $\\color{rgb(99,190,23)}{\\textsf{800}}$ | \> 700 | Il riscontro è certo, i parametri principali corrispondono, sono possibili non corrispondenze su un numero limitato di parametri non identificativi |   |
 
-Nel caso in cui siano presenti omonimie con anche altri parametri corrispondenti il programma potrebbe segnalare come parzialmente corretto il riscontro. Ad esempio, nel caso di due fratelli, se corrispondono numero di tessera, societÃ , categoria e cognome con un nome differente.  
-Di un atleta ogni suo dato viene visualizzato in quatto modalitÃ  differenti:
+Nel caso in cui siano presenti omonimie con anche altri parametri corrispondenti il programma potrebbe segnalare come parzialmente corretto il riscontro. Ad esempio, nel caso di due fratelli, se corrispondono numero di tessera, società, categoria e cognome con un nome differente.  
+Di un atleta ogni suo dato viene visualizzato in quatto modalità differenti:
 
-| Â  | Descrizione | Revisione |
+|   | Descrizione | Revisione |
 | --- | --- | --- |
-| $${Cognome}$$ | Dato non utilizzato | Â  |
-| $${\\color{red}Cognome}$$ | Dato non trovato nei tesseramenti | SÃ¬ |
-| $${\\color{orange}Cognome}$$ | Dato non corrisponde a quanto presente nei tesseramenti | SÃ¬ |
-| $${\\color{green}Cognome}$$ | Dato corrisponde con lâ€™atleta individuato nei tesseramenti | Â  |
+| $${Cognome}$$ | Dato non utilizzato |   |
+| $${\\color{red}Cognome}$$ | Dato non trovato nei tesseramenti | Sì |
+| $${\\color{orange}Cognome}$$ | Dato non corrisponde a quanto presente nei tesseramenti | Sì |
+| $${\\color{green}Cognome}$$ | Dato corrisponde con l’atleta individuato nei tesseramenti |   |
 
-##### Il report restituito dal programma IscrizioneAtleti va inteso unicamente come suggerimento di verifica dei dati. Lâ€™utilizzo del programma non esclude unâ€™approfondita ed accurata verifica delle iscrizioni.
+##### Il report restituito dal programma IscrizioneAtleti va inteso unicamente come suggerimento di verifica dei dati. L’utilizzo del programma non esclude un’approfondita ed accurata verifica delle iscrizioni.
