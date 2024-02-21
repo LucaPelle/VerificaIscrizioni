@@ -23,11 +23,11 @@
                     Home.socPath = socFile.FileName;
                     socFile.Dispose();
                 }
-                SelezionatoUnPercorso(this, e);
+                SelezionatoUnPercorso("soc", e);
             }
             catch (Exception ex)
             {
-                string message = "Errore di sistema nella selezione del file";
+                string message = "Errore di sistema nella selezione del file società";
 #if DEBUG
                 DialogResult result = MessageBox.Show(message + "\n" + ex, "Verifica Iscrizioni", MessageBoxButtons.OK);
 #else
@@ -55,11 +55,11 @@
                     Home.atlPath = atlFile.FileName;
                     atlFile.Dispose();
                 }
-                SelezionatoUnPercorso(this, e);
+                SelezionatoUnPercorso("atl", e);
             }
             catch (Exception ex)
             {
-                string message = "Errore di sistema nella selezione del file";
+                string message = "Errore di sistema nella selezione del file atleti";
 #if DEBUG
                 DialogResult result = MessageBox.Show(message + "\n" + ex, "Verifica Iscrizioni", MessageBoxButtons.OK);
 #else
@@ -89,11 +89,11 @@
                     iscrFile.Dispose();
                     CambioFileIscrizioni(this, e);
                 }
-                SelezionatoUnPercorso(this, e);
+                SelezionatoUnPercorso("iscr", e);
             }
             catch (Exception ex)
             {
-                string message = "Errore di sistema nella selezione del file";
+                string message = "Errore di sistema nella selezione del file iscrizioni";
 #if DEBUG
                 DialogResult result = MessageBox.Show(message + "\n" + ex, "Verifica Iscrizioni", MessageBoxButtons.OK);
 #else

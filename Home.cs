@@ -1,4 +1,5 @@
 using ClosedXML.Excel;
+using Microsoft.VisualBasic.Logging;
 using System.Data;
 
 namespace VerificaIscrizioni
@@ -30,20 +31,55 @@ namespace VerificaIscrizioni
             //ricerca file atleti e società nella stessa cartella del file iscrizioni
             percorso1.SelezionatoUnPercorso += (sender, e) =>
             {
+                System.Diagnostics.Debug.WriteLine(sender.ToString());
                 //verifica che iscrizioni sia selezionato
-                if (iscrPath != string.Empty)
+                if (sender!.ToString()!.Equals("iscr"))
                 {
                     //che società non sia già stato selezionato
                     if (socPath == string.Empty)
                     {
-                        socPath = Directory.GetFiles(Path.GetDirectoryName(iscrPath), "*soc*.dbf")[0];
-                        percorso1.socBox.Text = socPath;
+                        String[] fileList = Directory.GetFiles(Path.GetDirectoryName(iscrPath), "*soc*.dbf");
+                        if (fileList.Length > 0)
+                        {
+                            socPath = fileList[0];
+                            percorso1.socBox.Text = socPath;
+                        }
                     }
                     //che atleti non sia stato selezionato
                     if (atlPath == string.Empty)
                     {
-                        atlPath = Directory.GetFiles(Path.GetDirectoryName(iscrPath), "*atl*.dbf")[0];
-                        percorso1.atlBox.Text = atlPath;
+                        String[] fileList = Directory.GetFiles(Path.GetDirectoryName(iscrPath), "*atl*.dbf");
+                        if (fileList.Length > 0)
+                        {
+                            atlPath = fileList[0];
+                            percorso1.atlBox.Text = atlPath;
+                        }
+                    }
+                }
+                else if (sender!.ToString()!.Equals("soc"))
+                {
+                    //che atleti non sia stato selezionato
+                    if (atlPath == string.Empty)
+                    {
+                        String[] fileList = Directory.GetFiles(Path.GetDirectoryName(socPath), "*atl*.dbf");
+                        if (fileList.Length > 0)
+                        {
+                            atlPath = fileList[0];
+                            percorso1.atlBox.Text = atlPath;
+                        }
+                    }
+                }
+                else if (sender!.ToString()!.Equals("atl"))
+                {
+                    //che società non sia già stato selezionato
+                    if (socPath == string.Empty)
+                    {
+                        String[] fileList = Directory.GetFiles(Path.GetDirectoryName(atlPath), "*soc*.dbf");
+                        if (fileList.Length > 0)
+                        {
+                            socPath = fileList[0];
+                            percorso1.socBox.Text = socPath;
+                        }
                     }
                 }
 
